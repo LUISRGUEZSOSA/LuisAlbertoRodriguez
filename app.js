@@ -1,13 +1,13 @@
 const PHOTOS = [
+  "./resources/1000061483.jpg",
   "./resources/1000060609.jpg",
-  "./resources/1000061483.jpg", // ahora sí puede estar en el carrusel
-  "./resources/1000061763.jpg",
+  "./resources/IMG_20251214_184045.jpg",
+  "./resources/IMG_20251220_110739.jpg",
   "./resources/1000124849_OKK.jpg",
   "./resources/IMG_20251213_221859.jpg",
   "./resources/IMG_20251214_160353.jpg",
-  "./resources/IMG_20251214_184045.jpg",
-  "./resources/IMG_20251220_110739.jpg",
   "./resources/IMG_20251222_100645.jpg",
+  "./resources/1000061763.jpg",
 ];
 
 const I18N = {
