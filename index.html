@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Luis Alberto Rodríguez — Actor</title>
+  <meta name="description" content="Luis Alberto Rodríguez — Actor. Fotos, videobook y contacto." />
+  <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="paper" aria-hidden="true"></div>
+
+  <header class="top">
+    <div class="wrap top__inner">
+      <div class="id">
+        <div class="id__name" data-i18n="name">Luis Alberto Rodríguez</div>
+        <div class="id__meta" data-i18n="meta">Actor · Español e inglés · Madrid | Gran Canaria</div>
+      </div>
+
+      <button class="toggle" id="langToggle" type="button" aria-label="Cambiar idioma">
+        <span class="toggle__a" id="langPill">ES</span>
+        <span class="toggle__b" id="langHint">EN</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="stage" aria-label="Galería">
+      <!-- Big layout image (NOT sticky/fixed) -->
+      <figure class="layout" aria-label="Imagen principal">
+        <img
+          src="./resources/1000061483.jpg"
+          alt="Luis Alberto Rodríguez — Imagen principal"
+          loading="eager"
+        />
+      </figure>
+
+      <!-- Center: featured + thumbs carousel -->
+      <section class="center" aria-label="Fotos">
+        <p class="line" data-i18n="line">Inspirar al mundo desde la gran pantalla.</p>
+
+        <div class="showcase" aria-label="Carrusel principal">
+          <div class="showcase__frame" id="showcaseFrame" role="button" tabindex="0" aria-label="Ampliar foto">
+            <img id="heroImg" alt="Foto seleccionada" />
+          </div>
+
+          <div class="showcase__controls" aria-label="Controles del carrusel">
+            <button class="nav" id="prev" type="button" aria-label="Anterior">←</button>
+            <div class="count" id="count" aria-live="polite">1 / 1</div>
+            <button class="nav" id="next" type="button" aria-label="Siguiente">→</button>
+          </div>
+
+          <div class="thumbRail" id="thumbRail" aria-label="Miniaturas">
+            <!-- injected by JS -->
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="section" id="videobook" aria-label="Videobook">
+      <div class="head">
+        <div class="head__t" data-i18n="videoTitle">Videobook</div>
+        <div class="head__rule" aria-hidden="true"></div>
+      </div>
+
+      <div class="video">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/nOYF5fyGnYY?rel=0&modestbranding=1"
+          title="Videobook — Luis Alberto Rodríguez"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contacto" aria-label="Contacto">
+      <div class="head">
+        <div class="head__t" data-i18n="contactTitle">Contacto</div>
+        <div class="head__rule" aria-hidden="true"></div>
+      </div>
+
+      <div class="contact">
+        <a class="row" href="mailto:luisguezsosa@gmail.com">
+          <span class="row__k" data-i18n="emailLabel">Email</span>
+          <span class="row__v">luisguezsosa@gmail.com</span>
+        </a>
+
+        <a class="row" href="https://instagram.com/luisbeerto" target="_blank" rel="noopener">
+          <span class="row__k" data-i18n="instaLabel">Instagram</span>
+          <span class="row__v">@luisbeerto</span>
+        </a>
+      </div>
+
+      <footer class="foot">
+        <span class="foot__small" data-i18n="footSmall">Madrid · Gran Canaria</span>
+        <span class="foot__small">© <span id="year"></span> Luis Alberto Rodríguez</span>
+      </footer>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Visor">
+      <button class="lightbox__close" id="lbClose" type="button" aria-label="Cerrar">✕</button>
+      <div class="lightbox__frame">
+        <img id="lbImg" alt="Foto ampliada" />
+      </div>
+    </div>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
