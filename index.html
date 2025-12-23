@@ -8,6 +8,9 @@
   <meta name="description" content="Luis Alberto Rodríguez — Actor. Fotos, videobook y contacto." />
   <link rel="preconnect" href="https://www.youtube-nocookie.com" />
   <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Favicon (usa una de tus imágenes) -->
+  <link rel="icon" type="image/jpeg" href="./resources/1000061483.jpg" />
 </head>
 
 <body>
@@ -28,18 +31,9 @@
   </header>
 
   <main class="wrap">
-    <section class="stage" aria-label="Galería">
-      <!-- Big layout image (NOT sticky/fixed) -->
-      <figure class="layout" aria-label="Imagen principal">
-        <img
-          src="./resources/1000061483.jpg"
-          alt="Luis Alberto Rodríguez — Imagen principal"
-          loading="eager"
-        />
-      </figure>
-
-      <!-- Center: featured + thumbs carousel -->
-      <section class="center" aria-label="Fotos">
+    <!-- SOLO CARRUSEL -->
+    <section class="stage" aria-label="Fotos">
+      <section class="center" aria-label="Carrusel">
         <p class="line" data-i18n="line">Inspirar al mundo desde la gran pantalla.</p>
 
         <div class="showcase" aria-label="Carrusel principal">
@@ -95,12 +89,13 @@
           <span class="row__v">@luisbeerto</span>
         </a>
       </div>
-
-      <footer class="foot">
-        <span class="foot__small" data-i18n="footSmall">Madrid · Gran Canaria</span>
-        <span class="foot__small">© <span id="year"></span> Luis Alberto Rodríguez</span>
-      </footer>
     </section>
+
+    <!-- FOOTER (separado y limpio) -->
+    <footer class="foot" aria-label="Pie de página">
+      <span class="foot__small" data-i18n="footSmall">Madrid · Gran Canaria</span>
+      <span class="foot__small">© <span id="year"></span> Luis Alberto Rodríguez</span>
+    </footer>
 
     <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Visor">

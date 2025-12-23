@@ -9,7 +9,6 @@
 
   --max: 1180px;
   --radius: 18px;
-  --ease: cubic-bezier(.2,.9,.2,1);
 }
 
 *{box-sizing:border-box}
@@ -106,26 +105,9 @@ img{display:block;max-width:100%}
   letter-spacing: .12em;
 }
 
-/* Stage */
+/* Stage (now only one column) */
 .stage{
   padding: 18px 0 10px;
-  display:grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-
-/* Main layout image (no sticky/fixed) */
-.layout{
-  margin:0;
-  border-radius: var(--radius);
-  overflow:hidden;
-  border: 1px solid var(--hair2);
-  background: rgba(255,255,255,.02);
-}
-.layout img{
-  width:100%;
-  height:auto;         /* show original */
-  object-fit: initial; /* no crop */
 }
 
 /* Center */
@@ -145,7 +127,7 @@ img{display:block;max-width:100%}
   font-weight: 760;
 }
 
-/* ===== New: Showcase carousel (no fixed image crop) ===== */
+/* Showcase carousel */
 .showcase{
   width: 100%;
   display:flex;
@@ -153,7 +135,6 @@ img{display:block;max-width:100%}
   gap: 10px;
 }
 
-/* Featured image area: it adapts, image stays original (contain) */
 .showcase__frame{
   width: 100%;
   border-radius: var(--radius);
@@ -163,10 +144,9 @@ img{display:block;max-width:100%}
   display:flex;
   align-items:center;
   justify-content:center;
-  padding: 8px; /* subtle breathing room */
+  padding: 8px;
 }
 
-/* IMPORTANT: not cropped; shows entire photo */
 .showcase__frame img{
   width: 100%;
   height: auto;
@@ -174,7 +154,6 @@ img{display:block;max-width:100%}
   object-fit: contain;
 }
 
-/* Controls */
 .showcase__controls{
   display:flex;
   align-items:center;
@@ -202,7 +181,6 @@ img{display:block;max-width:100%}
   font-weight: 900;
 }
 
-/* Thumbnail rail: images can have different proportions */
 .thumbRail{
   display:flex;
   gap: 10px;
@@ -226,13 +204,11 @@ img{display:block;max-width:100%}
   justify-content:center;
 }
 
-/* Thumbs: no crop; we contain inside a height */
 .thumb img{
   height: 84px;
   width: auto;
-  max-width: 220px;     /* avoids huge landscape thumbs */
-  object-fit: contain;  /* keep full photo */
-  display:block;
+  max-width: 220px;
+  object-fit: contain;
 }
 
 .thumb.is-active{
@@ -301,11 +277,14 @@ img{display:block;max-width:100%}
   color: rgba(245,246,255,.92);
 }
 
+/* Footer (now outside contact section, with clean spacing) */
 .foot{
-  padding: 14px 2px 26px;
+  margin-top: 18px;
+  padding: 18px 2px 30px;
+  border-top: 1px solid var(--hair2);
   display:flex;
   flex-direction:column;
-  gap: 6px;
+  gap: 8px;
   color: rgba(245,246,255,.56);
   font-size: 12px;
 }
@@ -353,13 +332,7 @@ img{display:block;max-width:100%}
   object-fit: initial;
 }
 
-/* Responsive enhancements */
 @media (min-width: 980px){
-  .stage{
-    grid-template-columns: 0.95fr 1.05fr;
-    gap: 16px;
-    align-items:start;
-  }
   .line{ font-size: 18px; }
   .thumb img{ height: 96px; }
 }

@@ -1,6 +1,6 @@
-// ====== Secondary photos (exclude main layout 1000061483.jpg) ======
 const PHOTOS = [
   "./resources/1000060609.jpg",
+  "./resources/1000061483.jpg", // ahora sí puede estar en el carrusel
   "./resources/1000061763.jpg",
   "./resources/1000124849_OKK.jpg",
   "./resources/IMG_20251213_221859.jpg",
@@ -10,7 +10,6 @@ const PHOTOS = [
   "./resources/IMG_20251222_100645.jpg",
 ];
 
-// ====== i18n ======
 const I18N = {
   es: {
     name: "Luis Alberto Rodríguez",
@@ -38,10 +37,10 @@ const state = {
   lang: "es",
   index: 0,
   timer: null,
-  autoMs: 4000,
+  autoMs: 3000, // ✅ 3 seconds
 };
 
-// ====== DOM ======
+// DOM
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
@@ -51,7 +50,6 @@ const count = document.getElementById("count");
 
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
-
 const frame = document.getElementById("showcaseFrame");
 
 // lightbox
@@ -59,7 +57,6 @@ const lb = document.getElementById("lightbox");
 const lbImg = document.getElementById("lbImg");
 const lbClose = document.getElementById("lbClose");
 
-// ====== Lightbox ======
 function openLightbox(src) {
   if (!lb || !lbImg) return;
   lbImg.src = src;
@@ -80,7 +77,6 @@ window.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeLightbox();
 });
 
-// ====== Carousel core ======
 function setActive(i, { user = false } = {}) {
   state.index = (i + PHOTOS.length) % PHOTOS.length;
 
@@ -93,7 +89,6 @@ function setActive(i, { user = false } = {}) {
     count.textContent = `${state.index + 1} / ${PHOTOS.length}`;
   }
 
-  // thumbs active state + keep visible
   const thumbs = Array.from(thumbRail?.querySelectorAll(".thumb") || []);
   thumbs.forEach((t, idx) =>
     t.classList.toggle("is-active", idx === state.index)
@@ -140,21 +135,20 @@ function prevSlide(user = false) {
 prev?.addEventListener("click", () => prevSlide(true));
 next?.addEventListener("click", () => nextSlide(true));
 
-// Keyboard support
+// keyboard (when lightbox closed)
 window.addEventListener("keydown", (e) => {
-  // ignore when lightbox is open (escape already handled)
   if (lb?.classList.contains("open")) return;
   if (e.key === "ArrowRight") nextSlide(true);
   if (e.key === "ArrowLeft") prevSlide(true);
 });
 
-// Click on featured image -> lightbox
+// click featured -> lightbox
 frame?.addEventListener("click", () => openLightbox(PHOTOS[state.index]));
 frame?.addEventListener("keydown", (e) => {
   if (e.key === "Enter" || e.key === " ") openLightbox(PHOTOS[state.index]);
 });
 
-// ====== Autoplay (4 seconds) ======
+// autoplay
 function startAutoplay() {
   stopAutoplay();
   state.timer = setInterval(() => nextSlide(false), state.autoMs);
@@ -167,7 +161,7 @@ function restartAutoplay() {
   startAutoplay();
 }
 
-// Pause on hover/focus for better UX
+// pause on interaction
 const pauseTargets = [frame, thumbRail, prev, next].filter(Boolean);
 pauseTargets.forEach((el) => {
   el.addEventListener("mouseenter", stopAutoplay);
@@ -176,7 +170,7 @@ pauseTargets.forEach((el) => {
   el.addEventListener("focusout", startAutoplay);
 });
 
-// ====== i18n ======
+// i18n
 function applyI18n() {
   document.documentElement.lang = state.lang;
 
@@ -209,10 +203,9 @@ function initLanguage() {
   });
 }
 
-// ====== Init ======
+// init
 initLanguage();
 applyI18n();
-
 buildThumbs();
 setActive(0);
 startAutoplay();
