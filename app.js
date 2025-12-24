@@ -1,9 +1,10 @@
 const PHOTOS = [
   "./resources/1000061483.jpg",
   "./resources/1000060609.jpg",
+  "resources/IMG_20251224_105355 (1).jpg",
   "./resources/IMG_20251214_184045.jpg",
   "./resources/IMG_20251220_110739.jpg",
-  "./resources/1000124849_OKK.jpg",
+  "./resources/IMG_20251224_105314 (1).jpg",
   "./resources/IMG_20251213_221859.jpg",
   "./resources/IMG_20251214_160353.jpg",
   "./resources/IMG_20251222_100645.jpg",
