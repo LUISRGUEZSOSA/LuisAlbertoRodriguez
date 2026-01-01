@@ -26,7 +26,7 @@ const I18N = {
     name: "Luis Alberto Rodríguez",
     meta: "Actor · Spanish & English · Madrid | Gran Canaria",
     line: "Inspire the world from the big screen.",
-    videoTitle: "Video book",
+    videoTitle: "Videobook",
     contactTitle: "Contact",
     emailLabel: "Email",
     instaLabel: "Instagram",
